@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace GoShop.Domain.Entities.SoldProduct
 {
-    public class SoldProduct : Auditable
+    public class SoldProduct
     {
         public int NumberOfSold { get; set; }
         public int ProductMarketId { get; set; }
+        public DateTime SoldAt { get; set; }
         //public ProductMarket Productmarket { get; set; }
     }
 }
