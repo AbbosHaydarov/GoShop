@@ -1,8 +1,9 @@
-﻿namespace GoShop.Domain.Entities.Category
+﻿using GoShop.Domain.Commons;
+
+namespace GoShop.Domain.Entities.Category
 {
-    public class Category
+    public class Category : Auditable
     {
-        public int Id { get; set; }
         public string Name { get; set; }
     }
 }
