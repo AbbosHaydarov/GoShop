@@ -1,6 +1,6 @@
 ﻿using GoShop.Domain.Commons;
 
-namespace GoShop.Domain.Entities.Category
+namespace GoShop.Domain.Entities.Categories
 {
     public class Category : Auditable
     {
