@@ -2,7 +2,7 @@
 
 namespace GoShop.Service.DTOs.Categories
 {
-    public class CategoryForCreationDTO
+    public class CategoryDTO
     {
         [Required]
         public string Name { get; set; }
