@@ -1,4 +1,6 @@
-﻿using GoShop.Data.IRepositories;
+﻿using GoShop.Data.DbContexts;
+using GoShop.Data.IRepositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,30 +12,51 @@ namespace GoShop.Data.Repositories
 {
     public class GenericRepositories<T> : IGenericRepository<T> where T : class
     {
-        public GenericRepositories() { }
-        public ValueTask<T> CreateAsync(T entity)
+        private GoShopDbContext dbContext;
+
+        protected readonly DbSet<T> dbSet;
+
+        public GenericRepositories(GoShopDbContext dbContext) 
         {
-            throw new NotImplementedException();
+            this.dbContext = dbContext;
+            this.dbSet = dbContext.Set<T>();
         }
 
-        public ValueTask<bool> DeleteAsync(Expression<Func<T, bool>> expression)
+        public async ValueTask<T> CreateAsync(T entity)
+            => (await dbSet.AddAsync(entity)).Entity;
+
+        public async ValueTask<bool> DeleteAsync(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            var entity = await dbSet.FirstOrDefaultAsync(expression);
+
+            if (entity == null)
+                return false;
+            else
+            {
+                dbSet.Remove(entity);
+                return true;
+            }
         }
 
         public IQueryable<T> GetAll(Expression<Func<T, bool>> expression, string[] includes = null, bool isTracking = true)
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = expression is null ? dbSet : dbSet.Where(expression);
+
+            if(includes != null)
+                foreach(var include in includes)
+                    if(!string.IsNullOrEmpty(include))
+                        query = query.Include(include);
+
+            if(!isTracking)
+                query = query.AsNoTracking();
+
+            return query;
         }
 
-        public ValueTask<T> GetAsync(Expression<Func<T, bool>> expression, string[] includes = null)
-        {
-            throw new NotImplementedException();
-        }
+        public async ValueTask<T> GetAsync(Expression<Func<T, bool>> expression, string[] includes = null)
+            => await GetAll(expression, includes, false).FirstOrDefaultAsync();
 
         public T Update(T entity)
-        {
-            throw new NotImplementedException();
-        }
+            => (dbSet.Update(entity)).Entity;
     }
 }
