@@ -6,4 +6,8 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GoShop.Domain\GoShop.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
