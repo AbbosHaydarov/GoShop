@@ -3,6 +3,8 @@ using GoShop.Domain.Entities.Markets;
 using GoShop.Domain.Entities.Products;
 using GoShop.Domain.Entities.ShtrixCodes;
 using GoShop.Domain.Entities.SoldProduct;
+using GoShop.Domain.Entities.SoldProducts;
+using GoShop.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -25,5 +27,8 @@ namespace GoShop.Data.DbContexts
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ShtrixCode> ShtrixCodes { get; set; }
         public virtual DbSet<SoldProduct> SoldProduct { get; set; }
+        public virtual DbSet<ProductMarket> ProductMarkets { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+
     }
 }
