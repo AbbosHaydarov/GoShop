@@ -29,6 +29,5 @@ namespace GoShop.Data.DbContexts
         public virtual DbSet<SoldProduct> SoldProduct { get; set; }
         public virtual DbSet<ProductMarket> ProductMarkets { get; set; }
         public virtual DbSet<User> Users { get; set; }
-
     }
 }
