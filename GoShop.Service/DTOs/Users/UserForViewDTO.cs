@@ -1,6 +1,6 @@
 ﻿namespace GoShop.Service.DTOs.Users
 {
-    public class UserForView
+    public class UserForViewDTO
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

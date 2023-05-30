@@ -1,6 +1,6 @@
 ﻿namespace GoShop.Service.DTOs.Users
 {
-    public class UserForUpdate
+    public class UserForUpdateDTO
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }
