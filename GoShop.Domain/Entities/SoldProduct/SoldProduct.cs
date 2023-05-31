@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GoShop.Domain.Entities.SoldProduct
 {
-    public class SoldProduct : Auditable
+    public class Product : Auditable
     {
         public int NumberOfSold { get; set; }
         public DateTime SoldAt { get; set; }
