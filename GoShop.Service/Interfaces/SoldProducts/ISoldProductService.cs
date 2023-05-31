@@ -8,13 +8,13 @@ namespace GoShop.Service.Interfaces.SoldProducts
     {
         ValueTask<SoldProductDTO> CreateAsync(SoldProductDTO soldProductDTO);
 
-        ValueTask<SoldProductDTO> UpdateAsync(int id, SoldProductDTO SoldProductDTO);
+        ValueTask<SoldProductDTO> UpdateAsync(int id, SoldProductDTO soldProductDTO);
 
         ValueTask<bool> DeleteAsync(int id);
 
         ValueTask<IEnumerable<SoldProductDTO>> GetAllAsync(
-            Expression<Func<SoldProduct, bool>> expression = null);
+            Expression<Func<Domain.Entities.SoldProduct.Product, bool>> expression = null);
 
-        ValueTask<SoldProductDTO> GetAsync(Expression<Func<SoldProduct, bool>> expression);
+        ValueTask<SoldProductDTO> GetAsync(Expression<Func<Domain.Entities.SoldProduct.Product, bool>> expression);
     }
 }

@@ -24,11 +24,10 @@ namespace GoShop.Data.DbContexts
 
         public virtual DbSet<Category> Categories{ get; set; }
         public virtual DbSet<Market> Markets { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Domain.Entities.Products.Product> Products { get; set; }
         public virtual DbSet<ShtrixCode> ShtrixCodes { get; set; }
-        public virtual DbSet<SoldProduct> SoldProduct { get; set; }
+        public virtual DbSet<Products> SoldProduct { get; set; }
         public virtual DbSet<ProductMarket> ProductMarkets { get; set; }
         public virtual DbSet<User> Users { get; set; }
-
     }
 }

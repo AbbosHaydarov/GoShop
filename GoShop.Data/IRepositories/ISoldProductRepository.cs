@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GoShop.Data.IRepositories
 {
-    public interface ISoldProductRepository : IGenericRepository<SoldProduct>
+    public interface ISoldProductRepository : IGenericRepository<Products>
     {
     }
 }

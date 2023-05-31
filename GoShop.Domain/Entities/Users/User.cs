@@ -6,13 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GoShop.Domain.Entities.SoldProduct
+namespace GoShop.Domain.Entities.Users
 {
-    public class Product : Auditable
+    public class User : Auditable
     {
-        public int NumberOfSold { get; set; }
-        public DateTime SoldAt { get; set; }
-        
+        public string Email { get; set; }
+
+        public string Password { get; set; }
+
         public int MarketId { get; set; }
         public Market Market { get; set; }
     }
