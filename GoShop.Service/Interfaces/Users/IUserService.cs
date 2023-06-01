@@ -1,6 +1,6 @@
-﻿using GoShop.Domain.Entities.Users;
+﻿using System.Linq.Expressions;
+using GoShop.Domain.Entities.Users;
 using GoShop.Service.DTOs.Users;
-using System.Linq.Expressions;
 
 namespace GoShop.Service.Interfaces.Users
 {

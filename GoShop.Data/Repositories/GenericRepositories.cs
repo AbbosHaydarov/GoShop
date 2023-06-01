@@ -1,12 +1,7 @@
-﻿using GoShop.Data.DbContexts;
+﻿using System.Linq.Expressions;
+using GoShop.Data.DbContexts;
 using GoShop.Data.IRepositories;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GoShop.Data.Repositories
 {
@@ -16,7 +11,7 @@ namespace GoShop.Data.Repositories
 
         protected readonly DbSet<T> dbSet;
 
-        public GenericRepositories(GoShopDbContext dbContext) 
+        public GenericRepositories(GoShopDbContext dbContext)
         {
             this.dbContext = dbContext;
             this.dbSet = dbContext.Set<T>();
@@ -42,12 +37,12 @@ namespace GoShop.Data.Repositories
         {
             IQueryable<T> query = expression is null ? dbSet : dbSet.Where(expression);
 
-            if(includes != null)
-                foreach(var include in includes)
-                    if(!string.IsNullOrEmpty(include))
+            if (includes != null)
+                foreach (var include in includes)
+                    if (!string.IsNullOrEmpty(include))
                         query = query.Include(include);
 
-            if(!isTracking)
+            if (!isTracking)
                 query = query.AsNoTracking();
 
             return query;
