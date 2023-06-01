@@ -4,7 +4,7 @@ using GoShop.Domain.Entities.SoldProduct;
 
 namespace GoShop.Data.Repositories
 {
-    public class SoldProductRepository : GenericRepositories<SoldProduct>, ISoldProductRepository
+    public class SoldProductRepository : GenericRepositories<Products>,ISoldProductRepository
     {
         public SoldProductRepository(GoShopDbContext dbContext) : base(dbContext)
         {

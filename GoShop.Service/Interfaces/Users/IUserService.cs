@@ -1,18 +1,26 @@
-﻿using System.Linq.Expressions;
-using GoShop.Domain.Entities.Users;
+﻿using GoShop.Domain.Entities.Users;
+using GoShop.Service.DTOs.ProductsMarket;
 using GoShop.Service.DTOs.Users;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace GoShop.Service.Interfaces.Users
 {
     public interface IUserService
     {
-        ValueTask<IEnumerable<UserForViewDTO>> GetAllAsync(Expression<Func<User, bool>> expression = null);
-        ValueTask<UserForViewDTO> GetAsync(Expression<Func<User, bool>> expression);
-        ValueTask<UserForViewDTO> CreateAsync(UserForCreationDTO dto);
-        ValueTask<bool> DeleteAsync(long id);
-        ValueTask<UserForViewDTO> UpdateAsync(long id, UserForUpdateDTO dto);
-        ValueTask<bool> ChangePasswordAsync(UserForChangePasswordDTO dto);
-        ValueTask<bool> ChangeRoleAsync(long userId, byte roleId);
-        Task<UserForViewDTO> GetUserInfoAsync();
+        ValueTask<UserDTO> CreateAsync(UserDTO userDTO);
+
+        ValueTask<UserDTO> UpdateAsync(int id, UserDTO userDTO);
+
+        ValueTask<bool> DeleteAsync(int id);
+
+        ValueTask<IEnumerable<UserDTO>> GetAllAsync(
+            Expression<Func<User, bool>> expression = null);
+
+        ValueTask<UserDTO> GetAsync(Expression<Func<User, bool>> expression);
     }
 }
