@@ -4,11 +4,11 @@ using GoShop.Domain.Entities.Markets;
 
 namespace GoShop.Data.Repositories
 {
-    public class MarketRepository : GenericRepositories<Market>,IMarketRepository
+    public class MarketRepository : GenericRepositories<Market>, IMarketRepository
     {
-        public MarketRepository(GoShopDbContext dbContext) : base(dbContext) 
-        { 
-        
+        public MarketRepository(GoShopDbContext dbContext) : base(dbContext)
+        {
+
         }
     }
 }

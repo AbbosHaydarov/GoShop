@@ -1,5 +1,4 @@
-﻿using GoShop.Domain.Entities.SoldProducts;
-using GoShop.Domain.Entities.Users;
+﻿using GoShop.Domain.Entities.Users;
 using GoShop.Service.DTOs.ProductsMarket;
 using GoShop.Service.DTOs.Users;
 using System;

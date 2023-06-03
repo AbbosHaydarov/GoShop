@@ -8,7 +8,7 @@ namespace GoShop.Data.Repositories
     {
         public SoldProductRepository(GoShopDbContext dbContext) : base(dbContext)
         {
-        
+
         }
     }
 }
