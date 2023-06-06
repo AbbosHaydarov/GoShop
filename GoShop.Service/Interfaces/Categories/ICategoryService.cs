@@ -7,6 +7,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using GoShop.Domain.Entities.Products;
+using GoShop.Service.DTOs.Categories;
+using GoShop.Service.DTOs.Products;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace GoShop.Service.Interfaces.Categories
