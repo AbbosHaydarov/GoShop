@@ -4,9 +4,9 @@ using GoShop.Domain.Entities.Categories;
 
 namespace GoShop.Data.Repositories
 {
-    public class CategoryRepository : GenericRepositories<Category>,ICategoryRepository
+    public class CategoryRepository : GenericRepositories<Category>, ICategoryRepository
     {
-       public CategoryRepository(GoShopDbContext dbContext):base(dbContext)
+        public CategoryRepository(GoShopDbContext dbContext) : base(dbContext)
         {
 
         }
