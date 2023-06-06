@@ -9,7 +9,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GoShop.Service.Interfaces.Category
+namespace GoShop.Service.Interfaces.Categories
 {
     public interface ICategoryService
     {
@@ -19,9 +19,9 @@ namespace GoShop.Service.Interfaces.Category
 
         ValueTask<CategoryDTO> CreateAsync(CategoryDTO categoryDTO);
 
-        ValueTask<CategoryDTO> GetAsync(Expression<Func<Categories, bool>> expression);
+        ValueTask<CategoryDTO> GetAsync(Expression<Func<Category, bool>> expression);
 
         ValueTask<IEnumerable<CategoryDTO>> GetAllAsync(
-            Expression<Func<Categories, bool>> expression = null);
+            Expression<Func<Category, bool>> expression = null);
     }
 }
